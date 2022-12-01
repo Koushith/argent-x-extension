@@ -163,4 +163,6 @@ export const routes = {
   ledgerEntry: route("/ledger/start"),
   ledgerSelect: route("/ledger/select"),
   ledgerDone: route("/ledger/done"),
+  beneficiaryBackup: route("/recovery/beneficaryBackup"),
+  recoverAccount: route("/recovery/recoverAccount"),
 }

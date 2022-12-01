@@ -43,6 +43,8 @@ import { OnboardingRestorePassword } from "./features/onboarding/OnboardingResto
 import { OnboardingRestoreSeed } from "./features/onboarding/OnboardingRestoreSeed"
 import { OnboardingStartScreen } from "./features/onboarding/OnboardingStartScreen"
 import { BackupDownloadScreen } from "./features/recovery/BackupDownloadScreen"
+import { BeneficiaryBackup } from "./features/recovery/BeneficaryBackup"
+import { RecoverScreen } from "./features/recovery/RecoverAccount"
 import { RecoverySetupScreen } from "./features/recovery/RecoverySetupScreen"
 import { SeedRecoveryConfirmScreen } from "./features/recovery/SeedRecoveryConfirmScreen"
 import { SeedRecoverySetupScreen } from "./features/recovery/SeedRecoverySetupScreen"
@@ -177,6 +179,12 @@ const legacyUiWalletRoutes = (
       path={routes.confirmSeedRecovery.path}
       element={<SeedRecoveryConfirmScreen />}
     />
+    <Route
+      path={routes.beneficiaryBackup.path}
+      element={<BeneficiaryBackup />}
+    />
+    <Route path={routes.recoverAccount.path} element={<RecoverScreen />} />
+
     <Route
       path={routes.setupSeedRecovery.path}
       element={<SeedRecoverySetupScreen />}

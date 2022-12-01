@@ -58,6 +58,13 @@ export const OnboardingStartScreen: FC = () => {
           </RestoreWalletRectButtonIcon>
           Restore an existing wallet
         </RectButton>
+
+        {/* <RectButton onClick={() => navigate(routes.onboardingRestoreSeed())}>
+          <RestoreWalletRectButtonIcon>
+            <RefreshIcon />
+          </RestoreWalletRectButtonIcon>
+          Restore account as a Beneficiary
+        </RectButton> */}
       </Row>
     </OnboardingScreen>
   )

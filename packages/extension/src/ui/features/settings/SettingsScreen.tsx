@@ -133,6 +133,14 @@ export const SettingsScreen: FC = () => {
             title="Developer settings"
           />
 
+          <SettingsMenuItem
+            leftIcon={<CodeIcon />}
+            to={routes.settingsDeveloper()}
+            title="Developer settings"
+          />
+
+          {/* change icon */}
+
           {isPrivacySettingsEnabled && (
             <SettingsMenuItem
               leftIcon={<ShieldIcon />}

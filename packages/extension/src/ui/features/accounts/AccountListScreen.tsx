@@ -7,10 +7,11 @@ import {
 import { Flex } from "@chakra-ui/react"
 import { partition, some } from "lodash-es"
 import { FC, useCallback } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import styled from "styled-components"
 
-import { useReturnTo } from "../../routes"
+import { Button } from "../../components/Button"
+import { routes, useReturnTo } from "../../routes"
 import { P } from "../../theme/Typography"
 import { LoadingScreen } from "../actions/LoadingScreen"
 import { useCurrentNetwork } from "../networks/useNetworks"
@@ -28,7 +29,7 @@ import { HiddenAccountsBar } from "./HiddenAccountsBar"
 import { usePartitionDeprecatedAccounts } from "./upgrade.service"
 import { useAddAccount } from "./useAddAccount"
 
-const { AddIcon } = icons
+const { AddIcon, WalletIcon } = icons
 
 const Paragraph = styled(P)`
   text-align: center;
@@ -77,19 +78,31 @@ export const AccountListScreen: FC = () => {
 
   const [deprecatedAccounts, newAccounts] = partitionedAccounts
 
+  const redirectToRecover = () => {
+    navigate(routes.recoverAccount())
+  }
+
   return (
     <>
       <NavigationContainer
         leftButton={<BarCloseButton onClick={onClose} disabled={isDeploying} />}
         title={"My accounts"}
         rightButton={
-          <BarIconButton
-            aria-label="Create new wallet"
-            onClick={addAccount}
-            isLoading={isDeploying}
-          >
-            <AddIcon />
-          </BarIconButton>
+          <>
+            <BarIconButton
+              aria-label="Create new wallet"
+              onClick={addAccount}
+              isLoading={isDeploying}
+            >
+              <AddIcon />
+            </BarIconButton>
+            <BarIconButton
+              aria-label="Recover as Beneficiary"
+              onClick={redirectToRecover}
+            >
+              <WalletIcon />
+            </BarIconButton>
+          </>
         }
       >
         <Flex p={4} gap={2} direction="column">

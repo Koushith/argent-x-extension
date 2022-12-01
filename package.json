@@ -55,5 +55,9 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,md,yml,json}": "prettier --write",
     "*.{ts,tsx}": "eslint --cache --ext .ts,.tsx"
+  },
+  "dependencies": {
+    "@argent/get-starknet": "^5.0.10",
+    "starknet": "^4.9.0"
   }
 }
