@@ -19,7 +19,7 @@
     "starknet": "^4.14.0"
   },
   "devDependencies": {
-    "@types/node": "18.11.9",
+    "@types/node": "18.11.11",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "eslint": "8",
